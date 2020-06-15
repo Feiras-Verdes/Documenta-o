@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "27d40c97-3727-437e-8a30-801d6b867b4a",
+		"name": "API Feiras Verdes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cadastrar usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"nome\":\"Teste\",\r\n\"cpf\":\"111.111.111-11\",\r\n\"telefone\":\"(22) 22222-2222\",\r\n\"email\":\"teste@email.com\",\r\n\"dataNascimento\":\"2019-05-07\",\r\n\"senha\":\"123\",\r\n\"tipoUsuario\": {\r\n    \"id\": 1\r\n}\r\n}   ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/usuarios/atualizar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"usuarios",
+						"atualizar"
+					]
+				},
+				"description": "Cadastra um usuário"
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar usuario",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"nome\":\"Teste\",\r\n\"cpf\":\"111.111.111-11\",\r\n\"telefone\":\"(22) 22222-2222\",\r\n\"email\":\"teste@email.com\",\r\n\"dataNascimento\":\"2019-05-07\",\r\n\"senha\":\"123\",\r\n\"tipoUsuario\": {\r\n    \"id\": 1\r\n}\r\n}   ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/usuarios/atualizar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"usuarios",
+						"atualizar"
+					]
+				},
+				"description": "Cadastra um usuário"
+			},
+			"response": []
+		},
+		{
+			"name": "Excluir usuário",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0ZUBlbWFpbC5jb20iLCJleHAiOjE1OTIyOTczMTMsImlhdCI6MTU5MjEyNDUxM30.sfSomfjrNgmWMjQEWJ73NbQ5IkUkHLwaJQ_23l2KRyf-W3xfTzFcUONLSYkRZHwuLiZ4yP81YlDf_r7V-n_D1g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"nome\":\"Teste\",\r\n\"cpf\":\"111.111.111-11\",\r\n\"telefone\":\"(22) 22222-2222\",\r\n\"email\":\"teste@email.com\",\r\n\"dataNascimento\":\"2019-05-07\",\r\n\"senha\":\"123\",\r\n\"tipoUsuario\": {\r\n    \"id\": 1\r\n}\r\n}   ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/usuarios/1/excluir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"usuarios",
+						"1",
+						"excluir"
+					]
+				},
+				"description": "Cadastra um usuário"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"teste@email.com\",\r\n    \"senha\": 123\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/usuarios/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"usuarios",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisar usuário por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/usuarios/pesquisar-por-id/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"usuarios",
+						"pesquisar-por-id",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar todos usuários",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/usuarios/listarTodos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"usuarios",
+						"listarTodos"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
