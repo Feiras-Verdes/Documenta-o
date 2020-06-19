@@ -1,175 +1,802 @@
 {
 	"info": {
-		"_postman_id": "27d40c97-3727-437e-8a30-801d6b867b4a",
+		"_postman_id": "cb1b014c-7392-4427-8b79-c730578e623a",
 		"name": "API Feiras Verdes",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Cadastrar usuário",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n\"nome\":\"Teste\",\r\n\"cpf\":\"111.111.111-11\",\r\n\"telefone\":\"(22) 22222-2222\",\r\n\"email\":\"teste@email.com\",\r\n\"dataNascimento\":\"2019-05-07\",\r\n\"senha\":\"123\",\r\n\"tipoUsuario\": {\r\n    \"id\": 1\r\n}\r\n}   ",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Estande",
+			"item": [
+				{
+					"name": "Cadastrar Estande",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0ZUBlbWFpbC5jb20iLCJleHAiOjE1OTI2OTgyNDUsImlhdCI6MTU5MjUyNTQ0NX0.9AGr525Pv6OMfbKlKFYyvNqpdE66cVWrjoyOwCCsqaI5RsGSR0AH-zB0m229c9ntYosGdj_tt9CG2NjjcR3hRA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"frequencia\":\"Todo dia\",\n\"hora_fim\":\"19\",\n\"hora_inicio\":\"09\",\n\"nome\":\"Estande todo dia\",\n\"telefone\":\"99999999\",\n\"id_usuario\": 1\n}   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/estande/cadastrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"estande",
+								"cadastrar"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8081/usuarios/atualizar",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"usuarios",
-						"atualizar"
-					]
-				},
-				"description": "Cadastra um usuário"
-			},
-			"response": []
-		},
-		{
-			"name": "Atualizar usuario",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n\"nome\":\"Teste\",\r\n\"cpf\":\"111.111.111-11\",\r\n\"telefone\":\"(22) 22222-2222\",\r\n\"email\":\"teste@email.com\",\r\n\"dataNascimento\":\"2019-05-07\",\r\n\"senha\":\"123\",\r\n\"tipoUsuario\": {\r\n    \"id\": 1\r\n}\r\n}   ",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "Atualizar Estande",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0ZUBlbWFpbC5jb20iLCJleHAiOjE1OTI3NzM4NzEsImlhdCI6MTU5MjYwMTA3MX0.VXC_DNeGN5Z_JHTyVEf_WJUqHjcXKcuNqrLLLc89I4rzEY0IiulwsaZa790FATqkeYOBrTQ6HkbqxXlpYOG5Pg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"frequencia\":\"Todo dia\",\n\"hora_fim\":\"19\",\n\"hora_inicio\":\"09\",\n\"nome\":\"Estante todo dia atualizado\",\n\"telefone\":\"99999999\",\n\"id\": 2\n}   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/estande/2/atualizar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"estande",
+								"2",
+								"atualizar"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8081/usuarios/atualizar",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"usuarios",
-						"atualizar"
-					]
-				},
-				"description": "Cadastra um usuário"
-			},
-			"response": []
-		},
-		{
-			"name": "Excluir usuário",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0ZUBlbWFpbC5jb20iLCJleHAiOjE1OTIyOTczMTMsImlhdCI6MTU5MjEyNDUxM30.sfSomfjrNgmWMjQEWJ73NbQ5IkUkHLwaJQ_23l2KRyf-W3xfTzFcUONLSYkRZHwuLiZ4yP81YlDf_r7V-n_D1g",
-							"type": "string"
+				{
+					"name": "Excluir Estande",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0ZUBlbWFpbC5jb20iLCJleHAiOjE1OTI3NzM4NzEsImlhdCI6MTU5MjYwMTA3MX0.VXC_DNeGN5Z_JHTyVEf_WJUqHjcXKcuNqrLLLc89I4rzEY0IiulwsaZa790FATqkeYOBrTQ6HkbqxXlpYOG5Pg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/estande/2/excluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"estande",
+								"2",
+								"excluir"
+							]
 						}
-					]
+					},
+					"response": []
 				},
-				"method": "DELETE",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n\"nome\":\"Teste\",\r\n\"cpf\":\"111.111.111-11\",\r\n\"telefone\":\"(22) 22222-2222\",\r\n\"email\":\"teste@email.com\",\r\n\"dataNascimento\":\"2019-05-07\",\r\n\"senha\":\"123\",\r\n\"tipoUsuario\": {\r\n    \"id\": 1\r\n}\r\n}   ",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "LIstar Todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/estande/listarTodos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"estande",
+								"listarTodos"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8081/usuarios/1/excluir",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"usuarios",
-						"1",
-						"excluir"
-					]
+				{
+					"name": "Pesquisar Por Nome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/estande/pesquisar-por-nome/Estante",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"estande",
+								"pesquisar-por-nome",
+								"Estante"
+							]
+						}
+					},
+					"response": []
 				},
-				"description": "Cadastra um usuário"
-			},
-			"response": []
-		},
-		{
-			"name": "Login",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"teste@email.com\",\r\n    \"senha\": 123\r\n}"
-				},
-				"url": {
-					"raw": "http://localhost:8081/usuarios/login",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"usuarios",
-						"login"
-					]
+				{
+					"name": "Pesquisar Por Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/estande/pesquisar-por-id/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"estande",
+								"pesquisar-por-id",
+								"3"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "Pesquisar usuário por ID",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8081/usuarios/pesquisar-por-id/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"usuarios",
-						"pesquisar-por-id",
-						"1"
-					]
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "Excluir usuário",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0ZUBlbWFpbC5jb20iLCJleHAiOjE1OTIyOTczMTMsImlhdCI6MTU5MjEyNDUxM30.sfSomfjrNgmWMjQEWJ73NbQ5IkUkHLwaJQ_23l2KRyf-W3xfTzFcUONLSYkRZHwuLiZ4yP81YlDf_r7V-n_D1g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"nome\":\"Teste\",\r\n\"cpf\":\"111.111.111-11\",\r\n\"telefone\":\"(22) 22222-2222\",\r\n\"email\":\"teste@email.com\",\r\n\"dataNascimento\":\"2019-05-07\",\r\n\"senha\":\"123\",\r\n\"tipoUsuario\": {\r\n    \"id\": 1\r\n}\r\n}   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/usuarios/1/excluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"usuarios",
+								"1",
+								"excluir"
+							]
+						},
+						"description": "Cadastra um usuário"
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar usuário",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"nome\":\"Teste\",\r\n\"cpf\":\"111.111.111-11\",\r\n\"telefone\":\"(22) 22222-2222\",\r\n\"email\":\"teste@email.com\",\r\n\"dataNascimento\":\"2019-05-07\",\r\n\"senha\":\"123\",\r\n\"tipoUsuario\": {\r\n    \"id\": 1\r\n}\r\n}   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/usuarios/cadastrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"usuarios",
+								"cadastrar"
+							]
+						},
+						"description": "Cadastra um usuário"
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0ZUBlbWFpbC5jb20iLCJleHAiOjE1OTI3NzM4NzEsImlhdCI6MTU5MjYwMTA3MX0.VXC_DNeGN5Z_JHTyVEf_WJUqHjcXKcuNqrLLLc89I4rzEY0IiulwsaZa790FATqkeYOBrTQ6HkbqxXlpYOG5Pg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"nome\":\"Teste\",\r\n\"cpf\":\"111.111.111-11\",\r\n\"telefone\":\"(22) 22222-2222\",\r\n\"email\":\"teste@email.com\",\r\n\"dataNascimento\":\"2019-05-07\",\r\n\"senha\":\"123\",\r\n\"tipoUsuario\": {\r\n    \"id\": 1\r\n}\r\n}   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/usuarios/1/atualizar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"usuarios",
+								"1",
+								"atualizar"
+							]
+						},
+						"description": "Cadastra um usuário"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0ZUBlbWFpbC5jb20iLCJleHAiOjE1OTI3NzM4NzEsImlhdCI6MTU5MjYwMTA3MX0.VXC_DNeGN5Z_JHTyVEf_WJUqHjcXKcuNqrLLLc89I4rzEY0IiulwsaZa790FATqkeYOBrTQ6HkbqxXlpYOG5Pg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"teste@email.com\",\r\n    \"senha\": 123\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/usuarios/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"usuarios",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pesquisar usuário por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/usuarios/pesquisar-por-id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"usuarios",
+								"pesquisar-por-id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar todos usuários",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/usuarios/listarTodos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"usuarios",
+								"listarTodos"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "Listar todos usuários",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8081/usuarios/listarTodos",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"usuarios",
-						"listarTodos"
-					]
+			"name": "Busca",
+			"item": [
+				{
+					"name": "Pesquisar Estabelecimento",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0ZUBlbWFpbC5jb20iLCJleHAiOjE1OTI3MDAxNjYsImlhdCI6MTU5MjUyNzM2Nn0.nn0zQyjfIQzdZvB1oe4N_oFxeTcDXLQmLrPGOeIU8uAJQLNMP777mR4BmZJ-kdG5vA5TR3zSUMBfWJMbml9Cjg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/busca/estabelecimentos?nome=e&limite=10&pagina=0&ordenacao=nome&tipoOrdenacao=asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"busca",
+								"estabelecimentos"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "e"
+								},
+								{
+									"key": "limite",
+									"value": "10"
+								},
+								{
+									"key": "pagina",
+									"value": "0"
+								},
+								{
+									"key": "ordenacao",
+									"value": "nome"
+								},
+								{
+									"key": "tipoOrdenacao",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Feira",
+			"item": [
+				{
+					"name": "Cadastrar feira",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0ZUBlbWFpbC5jb20iLCJleHAiOjE1OTI3NzM4NzEsImlhdCI6MTU5MjYwMTA3MX0.VXC_DNeGN5Z_JHTyVEf_WJUqHjcXKcuNqrLLLc89I4rzEY0IiulwsaZa790FATqkeYOBrTQ6HkbqxXlpYOG5Pg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"frequencia\":\"Todo dia\",\n\"hora_fim\":\"19\",\n\"hora_inicio\":\"09\",\n\"nome\":\"Feira todo dia\",\n\"telefone\":\"99999999\",\n\"id_usuario\": 1\n}  ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/feira/cadastrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"feira",
+								"cadastrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Feira",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0ZUBlbWFpbC5jb20iLCJleHAiOjE1OTI3NzM4NzEsImlhdCI6MTU5MjYwMTA3MX0.VXC_DNeGN5Z_JHTyVEf_WJUqHjcXKcuNqrLLLc89I4rzEY0IiulwsaZa790FATqkeYOBrTQ6HkbqxXlpYOG5Pg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"frequencia\":\"Todo dia\",\n\"hora_fim\":\"19\",\n\"hora_inicio\":\"09\",\n\"nome\":\"Feira todo dia atualizado\",\n\"telefone\":\"99999999\",\n\"idUsuario\": 1\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/feira/5/atualizar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"feira",
+								"5",
+								"atualizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Feira",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0ZUBlbWFpbC5jb20iLCJleHAiOjE1OTI3NzM4NzEsImlhdCI6MTU5MjYwMTA3MX0.VXC_DNeGN5Z_JHTyVEf_WJUqHjcXKcuNqrLLLc89I4rzEY0IiulwsaZa790FATqkeYOBrTQ6HkbqxXlpYOG5Pg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/feira/4/excluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"feira",
+								"4",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/feira/listarTodos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"feira",
+								"listarTodos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pesquisar Por Nome",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/feira/pesquisar-por-nome/Feira",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"feira",
+								"pesquisar-por-nome",
+								"Feira"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pesquisar Por Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/feira/pesquisar-por-id/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"feira",
+								"pesquisar-por-id",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Produto",
+			"item": [
+				{
+					"name": "Cadastrar Protudo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0ZUBlbWFpbC5jb20iLCJleHAiOjE1OTI3NzM4NzEsImlhdCI6MTU5MjYwMTA3MX0.VXC_DNeGN5Z_JHTyVEf_WJUqHjcXKcuNqrLLLc89I4rzEY0IiulwsaZa790FATqkeYOBrTQ6HkbqxXlpYOG5Pg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"nome\":\"Banana\",\n\"descricao\":\"Banana azul\",\n\"preco\": 5.50\n}  ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/produto/cadastrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"produto",
+								"cadastrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Produto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0ZUBlbWFpbC5jb20iLCJleHAiOjE1OTI3NzM4NzEsImlhdCI6MTU5MjYwMTA3MX0.VXC_DNeGN5Z_JHTyVEf_WJUqHjcXKcuNqrLLLc89I4rzEY0IiulwsaZa790FATqkeYOBrTQ6HkbqxXlpYOG5Pg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"nome\":\"Banana\",\n\"descricao\":\"Banana verde\",\n\"preco\": 4.50\n}  ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/produto/9/atualizar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"produto",
+								"9",
+								"atualizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Produto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0ZUBlbWFpbC5jb20iLCJleHAiOjE1OTI3NzM4NzEsImlhdCI6MTU5MjYwMTA3MX0.VXC_DNeGN5Z_JHTyVEf_WJUqHjcXKcuNqrLLLc89I4rzEY0IiulwsaZa790FATqkeYOBrTQ6HkbqxXlpYOG5Pg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/produto/9/excluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"produto",
+								"9",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/produto/listarTodos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"produto",
+								"listarTodos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar por Nome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/produto/pesquisar-por-nome/Banana",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"produto",
+								"pesquisar-por-nome",
+								"Banana"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pesquisar por Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/produto/pesquisar-por-id/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"produto",
+								"pesquisar-por-id",
+								"11"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"protocolProfileBehavior": {}
